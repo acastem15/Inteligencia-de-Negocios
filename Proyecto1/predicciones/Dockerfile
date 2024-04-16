@@ -15,9 +15,9 @@ RUN pipenv install
 
 COPY . .
 
-EXPOSE 3000
+EXPOSE 5000
 
 ENV FLASK_APP="./src/main.py"
 ENV PYTHONUNBUFFERED=1
 
-ENTRYPOINT ["pipenv", "run", "flask", "run", "-h", "0.0.0.0", "--port=3000"]
+ENTRYPOINT ["pipenv", "run", "flask", "run", "-h", "0.0.0.0", "--port=5000"]
