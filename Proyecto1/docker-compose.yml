@@ -8,7 +8,7 @@ services:
   predicciones:
     build: ./predicciones
     ports:
-      - "3000:3000"
+      - "5000:5000"
     environment:
       DB_NAME: monitor_predicciones
       DB_HOST: predicciones_db
@@ -35,3 +35,9 @@ services:
       retries: 5
     networks:
       - prediccion_net
+  predicciones_front:
+    build: ./predicciones_front
+    ports:
+      - "3000:3000"
+    networks:
+      - app_net
