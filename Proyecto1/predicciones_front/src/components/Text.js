@@ -19,7 +19,7 @@ function Text() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ text: inputValue }),
+        body: JSON.stringify({ resena: inputValue, clasificacion: "none", probabilidad: 0}),
       });
 
       if (!response.ok) {
