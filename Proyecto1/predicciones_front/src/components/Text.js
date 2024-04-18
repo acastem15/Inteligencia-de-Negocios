@@ -11,18 +11,7 @@ function Text() {
   const handleChange = (event) => {
     setInputValue(event.target.value);
   };
-  // Configuración del carrusel
-  const settings = {
-    dots: false, // Ocultar los puntos indicadores
-    arrows: false, // Ocultar los botones de navegación
-    infinite: true,
-    speed: 1000, // Velocidad de transición
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true, // Reproducir automáticamente
-    autoplaySpeed: 3000, // Intervalo entre cada transición
-    vertical: false // Mostrar las imágenes horizontalmente
-  };
+
   // Function to handle button click
   const handlePrediction = async () => {
     try {
