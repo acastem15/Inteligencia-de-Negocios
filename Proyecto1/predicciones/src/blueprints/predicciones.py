@@ -7,7 +7,6 @@ predicciones_blueprint = Blueprint('predicciones', __name__)
 
 @predicciones_blueprint.route('/predicciones', methods=['POST'])
 def create():
-    #model_path = 'Proyecto1/predicciones/src/assets/model.pkl'
     prediccion = CreatePrediccion(request.get_json()).execute()
     return jsonify(prediccion), 201
 

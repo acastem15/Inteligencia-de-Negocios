@@ -20,7 +20,7 @@ function Text() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ resena: inputValue, clasificacion: "none", probabilidad: 0}),
+        body: JSON.stringify({ resena: inputValue }),
       });
 
       if (!response.ok) {
@@ -28,8 +28,7 @@ function Text() {
       }
 
       const data = await response.json();
-      // Assuming your backend returns an object with keys "prediction" and "probability"
-      setPredictionResult(`Prediction: ${data.clasificacion}, Probability: ${data.probabilidad}`);
+      setPredictionResult(`Predicción: ${data.prediccion}, Probabilidad: ${data.probabilidad}`);
     } catch (error) {
       console.error('Error predicting:', error);
     }
