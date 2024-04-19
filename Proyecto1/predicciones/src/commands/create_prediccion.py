@@ -2,41 +2,37 @@ from .base_command import BaseCommannd
 from ..models.prediccion import Prediccion, PrediccionSchema, CreatedPrediccionJsonSchema
 from ..session import Session
 from ..errors.errors import IncompleteParams
-import joblib
+from joblib import load
+import pandas as pd
+import os
+
 
 class CreatePrediccion(BaseCommannd):
-    def _init_(self, data, model_path):
+    def __init__(self, data):
         self.data = data
-        self.model_path = model_path
-        self.model = self.load_model()
 
     def load_model(self):
+        path = os.path.join(os.path.dirname(__file__), 'assets/modelLemmatizer.joblib')
+        model = load(path)
         try:
-            return joblib.load(self.model_path)
+            return model
         except FileNotFoundError:
             raise FileNotFoundError("No se encontró el modelo en la ruta especificada")
 
     def execute(self):
         try:
             posted_prediccion_data = PrediccionSchema(
-                only=('reseña',)).load(self.data)
-            reseña_text = posted_prediccion_data['reseña']
+                only=('resena',)).load(self.data)
 
-            prediction = self.model.predict_proba([reseña_text])[0]
-            clasificacion = prediction.argmax()
-            probabilidad = prediction[clasificacion]
-
-            prediccion = Prediccion(
-                reseña=reseña_text,
-                clasificacion=clasificacion,
-                probabilidad=probabilidad
-            )
+            df = pd.DataFrame(posted_prediccion_data, columns=posted_prediccion_data.keys(), index=[0])
+            model = self.load_model()
+            result = model.predict(df)
             
             session = Session()
-            session.add(prediccion)
+            session.add(result)
             session.commit()
 
-            new_prediccion = CreatedPrediccionJsonSchema().dump(prediccion)
+            new_prediccion = CreatedPrediccionJsonSchema().dump(result)
             session.close()
 
             return new_prediccion
