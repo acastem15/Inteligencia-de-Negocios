@@ -1,0 +1,70 @@
+/* styles.css */
+/* styles.css */
+.header {
+  background-color: rgb(247, 190, 117);
+  padding: 20px;
+  color: black;
+  text-align: left;
+  font-family: 'Arial', sans-serif; /* Fuente que puede ser adecuada para una aplicación de turismo */
+}
+
+.header img {
+  width: 50px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.header span {
+  font-weight: bold; /* Aplicamos negrita al texto */
+}
+
+.image-container {
+  width: 100%; /* Ancho total de la página */
+  overflow-x: auto; /* Permitir el desplazamiento horizontal si las imágenes son demasiado anchas */
+  display: flex; /* Utilizar flexbox para distribuir las imágenes horizontalmente */
+  justify-content: center; /* Centrar horizontalmente las imágenes */
+  margin-top: 20px; /* Agregar margen superior para separar las imágenes del encabezado */
+
+}
+
+.image {
+  width: 150px; /* Ancho deseado para las imágenes */
+  height: 150px; /* Altura deseada para las imágenes */
+  border-radius: 50%; /* Hacer las imágenes circulares */
+  margin-right: 10px; /* Espacio entre las imágenes */
+}
+
+/* Estilo adicional para eliminar el margen derecho de la última imagen */
+.image:last-child {
+  margin-right: 0;
+}
+
+.textbox-container {
+  margin-top: 20px; /* Agregar margen superior para separar el textbox de las imágenes */
+}
+
+.textbox {
+  width: 300px; /* Ancho del textbox */
+  height: 40px; /* Altura del textbox */
+  padding: 10px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  border: 1px solid #ccc; /* Borde */
+  border-radius: 5px; /* Borde redondeado */
+}
+
+.button {
+  width: 100px; /* Ancho del botón */
+  height: 40px; /* Altura del botón */
+  margin-top: 10px; /* Margen superior */
+  background-color: #007bff; /* Color de fondo del botón */
+  color: white; /* Color de texto */
+  border: none; /* Quitar borde */
+  border-radius: 5px; /* Borde redondeado */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cursor al pasar por encima */
+}
+
+.button:hover {
+  background-color: #0056b3; /* Color de fondo del botón al pasar el mouse */
+}
+
