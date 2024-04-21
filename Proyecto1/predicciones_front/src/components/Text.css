@@ -70,7 +70,6 @@
 
 /* Estilos para el recuadro negro */
 .review-container {
-  width: 72%; /* Para que tenga el mismo ancho que el recuadro negro */
   display: flex;
   flex-direction: column; /* Para que el título y el cuadro de reseña estén uno encima del otro */
   justify-content: center;
