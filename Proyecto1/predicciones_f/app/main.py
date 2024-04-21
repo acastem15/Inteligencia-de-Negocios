@@ -49,6 +49,7 @@ def get_prediction(dataModel):
 
 @app.post("/predicciones")
 def predict(params: ModelParams):
+    print(params)
 
     pred = get_prediction(params)
 
