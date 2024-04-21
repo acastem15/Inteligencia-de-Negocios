@@ -6,7 +6,6 @@ function Text() {
   const [inputValue, setInputValue] = useState('');
   const [predictionResult, setPredictionResult] = useState('');
   const [pingStatus, setPingStatus] = useState('');
-  const [pingStatus, setPingStatus] = useState('');
 
   const handleChange = (event) => {
     setInputValue(event.target.value);
@@ -28,31 +27,9 @@ function Text() {
       }
 
       const data = await response.json();
-
       setPredictionResult(`Predicción(1-peor y 5-mejor): ${data.prediccion}`);
-
     } catch (error) {
       console.error('Error predicting:', error);
-    }
-  };
-
-  const checkAppStatus = async () => {
-    try {
-      const response = await fetch('http://localhost:5000/predicciones/ping');
-
-      if (!response.ok) {
-        throw new Error('Failed to ping the application');
-      }
-
-      const data = await response.text();
-
-      if (data === 'Pong!') {
-        setPingStatus('La aplicación está funcionando bien!');
-      } else {
-        setPingStatus('La aplicación está funcionando bien!');
-      }
-    } catch (error) {
-      console.error('Error checking app status:', error);
     }
   };
 
@@ -92,7 +69,6 @@ function Text() {
       </div>
 
       {/* Texto */}
-
       <div style={{width: "100%",height: "700px"}}>
         <div style={{width: "70%", height: "100px",float: "left" }}> 
           <h1 className="title">Bienvenido a Tourify</h1>
@@ -178,6 +154,10 @@ function Text() {
         {/* Estado de la aplicación */}
       <div>{pingStatus}</div>
       </div>
+
+      
+
+      
     </div>
   );
 }
