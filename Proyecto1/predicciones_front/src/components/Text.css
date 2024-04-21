@@ -1,37 +1,45 @@
-/* styles.css */
-/* styles.css */
+/* Estilos para el encabezado */
 .header {
   background-color: rgb(247, 190, 117);
   padding: 20px;
   color: black;
   text-align: left;
-  font-family: 'Arial', sans-serif; /* Fuente que puede ser adecuada para una aplicación de turismo */
+  font-family: 'Arial', sans-serif;
 }
 
+/* Estilos para el logo en el encabezado */
 .header img {
   width: 50px;
   vertical-align: middle;
   margin-right: 10px;
 }
 
+/* Estilos para el contenedor de la descripción */
+.description-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Estilos para el texto del encabezado */
 .header span {
-  font-weight: bold; /* Aplicamos negrita al texto */
+  font-weight: bold;
 }
 
+/* Estilos para el contenedor de las imágenes */
 .image-container {
-  width: 100%; /* Ancho total de la página */
-  overflow-x: auto; /* Permitir el desplazamiento horizontal si las imágenes son demasiado anchas */
-  display: flex; /* Utilizar flexbox para distribuir las imágenes horizontalmente */
-  justify-content: center; /* Centrar horizontalmente las imágenes */
-  margin-top: 20px; /* Agregar margen superior para separar las imágenes del encabezado */
-
+  width: 100%;
+  overflow-x: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
+/* Estilos para las imágenes */
 .image {
-  width: 150px; /* Ancho deseado para las imágenes */
-  height: 150px; /* Altura deseada para las imágenes */
-  border-radius: 50%; /* Hacer las imágenes circulares */
-  margin-right: 10px; /* Espacio entre las imágenes */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
 /* Estilo adicional para eliminar el margen derecho de la última imagen */
@@ -39,32 +47,71 @@
   margin-right: 0;
 }
 
+/* Estilos para el contenedor del cuadro de texto y el botón */
 .textbox-container {
-  margin-top: 20px; /* Agregar margen superior para separar el textbox de las imágenes */
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Estilos para la imagen a la izquierda del cuadro de texto */
+.left-image-container {
+  width: 50%; /* Para que tenga el mismo ancho que el recuadro negro */
+  display: flex;
+  align-items: center;
+}
+
+.left-image {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+}
+
+/* Estilos para el recuadro negro */
+.review-container {
+  width: 72%; /* Para que tenga el mismo ancho que el recuadro negro */
+  display: flex;
+  flex-direction: column; /* Para que el título y el cuadro de reseña estén uno encima del otro */
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(2, 1, 15);
+  color: white;
+}
+
+.review-box {
+  width: 80%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 0;
+}
+
+/* Estilos para el cuadro de texto */
 .textbox {
-  width: 300px; /* Ancho del textbox */
-  height: 40px; /* Altura del textbox */
-  padding: 10px; /* Espaciado interno */
-  font-size: 16px; /* Tamaño de fuente */
-  border: 1px solid #ccc; /* Borde */
-  border-radius: 5px; /* Borde redondeado */
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
-
+.textbox::placeholder {
+  font-family: Arial, sans-serif;
+}
+/* Estilos para el botón */
 .button {
-  width: 100px; /* Ancho del botón */
-  height: 40px; /* Altura del botón */
-  margin-top: 10px; /* Margen superior */
-  background-color: #007bff; /* Color de fondo del botón */
-  color: white; /* Color de texto */
-  border: none; /* Quitar borde */
-  border-radius: 5px; /* Borde redondeado */
-  font-size: 16px; /* Tamaño de fuente */
-  cursor: pointer; /* Cursor al pasar por encima */
+  width: 100px;
+  height: 40px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
+/* Estilos para el botón al pasar el mouse */
 .button:hover {
-  background-color: #0056b3; /* Color de fondo del botón al pasar el mouse */
+  background-color: #0056b3;
 }
-

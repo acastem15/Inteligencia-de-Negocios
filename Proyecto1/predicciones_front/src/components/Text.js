@@ -19,7 +19,7 @@ function Text() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ resena: inputValue }),
+        body: JSON.stringify({ text: inputValue }),
       });
 
       if (!response.ok) {
@@ -27,7 +27,9 @@ function Text() {
       }
 
       const data = await response.json();
+
       setPredictionResult(`Predicción(1-peor y 5-mejor): ${data.prediccion}`);
+
     } catch (error) {
       console.error('Error predicting:', error);
     }
@@ -69,6 +71,7 @@ function Text() {
       </div>
 
       {/* Texto */}
+
       <div style={{width: "100%",height: "700px"}}>
         <div style={{width: "70%", height: "100px",float: "left" }}> 
           <h1 className="title">Bienvenido a Tourify</h1>
@@ -154,10 +157,6 @@ function Text() {
         {/* Estado de la aplicación */}
       <div>{pingStatus}</div>
       </div>
-
-      
-
-      
     </div>
   );
 }
